@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LtiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::controller(LtiController::class)
+    ->prefix('/lti')
+    ->group(function () {
+        Route::post('register', 'register');
+        Route::post('handle-assignment', 'handleAssignment')->name('lti-handle-assignment');
+    });
