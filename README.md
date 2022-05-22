@@ -27,3 +27,15 @@ For macOS:
     export LDFLAGS="-L/usr/local/Cellar/ruby@2.7/2.7.6/lib"
     export CPPFLAGS="-I/usr/local/Cellar/ruby@2.7/2.7.6/include"
     export PKG_CONFIG_PATH="/usr/local/Cellar/ruby@2.7/2.7.6/lib/pkgconfig"
+
+## Canvas Auth References
+
+https://laravel.com/docs/master/socialite
+
+https://socialiteproviders.com
+
+https://oauth.net/2/
+
+https://auth0.com/docs/secure/tokens/json-web-tokens/json-web-key-sets
+
+https://canvas.instructure.com/doc/api/index.html

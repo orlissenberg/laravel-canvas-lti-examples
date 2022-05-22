@@ -31,4 +31,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'canvas' => [
+        'install_url' => env('CANVAS_INSTALL_URL'),
+        'client_id' => env('CANVAS_CLIENT_ID'),
+        'client_secret' => env('CANVAS_CLIENT_SECRET'),
+        'redirect' => config('app.url') . '/auth/callback',
+    ],
 ];

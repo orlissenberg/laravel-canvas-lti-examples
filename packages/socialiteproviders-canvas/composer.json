@@ -1,0 +1,17 @@
+{
+    "name": "orlissenberg/socialiteproviders-canvas",
+    "autoload": {
+        "psr-4": {
+            "Orlissenberg\\SocialiteProviders\\Canvas\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Onno Lissenberg",
+            "email": "orlissenberg@gmail.com"
+        }
+    ],
+    "require": {
+        "socialiteproviders/manager": "^4.1"
+    }
+}
