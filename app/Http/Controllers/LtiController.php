@@ -60,7 +60,12 @@ class LtiController extends Controller
         $oauthParams = request()->except('oauth_signature');
         $signature = (new HmacSha1Signature($credentials))->sign($url, $oauthParams);
 
+        // See: app/controllers/lti/message_controller.rb:211
+        // Evaluate: message.message_authenticator.base_string
+
         return 'handle-assignment<br/><br/>'
+            . $signature . '<br/><br/>'
+            . request('oauth_signature') . '<br/><br/>'
             . $params . '<br/><br/>'
             . (($signature == request('oauth_signature')) ? 'Valid' : 'Invalid');
     }
@@ -108,8 +113,6 @@ class LtiController extends Controller
 
     protected function getToolProxyConfiguration(array $service, string $guid, string $ToolConsumerProfileUrl): string
     {
-        $this->shared_secret = 'insert-your-shared-secret-here';
-
         return json_encode([
             '@context' => ['http://purl.imsglobal.org/ctx/lti/v2/ToolProxy'],
             '@type' => 'ToolProxy',
